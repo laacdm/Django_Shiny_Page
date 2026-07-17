@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Experience - Luis' Web Site{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-briefcase experience-icon"></i> Professional Experience</h2>
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .experience-icon {
+            font-size: 1.6rem;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        /* Centered Content for Large Screens */
+        .col-md-12 {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+
+    <div class="row justify-content-center">
+        <!-- DeepLearning.AI -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-mortarboard experience-icon"></i> DeepLearning.AI</h5>
+                    <h6 class="card-subtitle mb-2">Mentor (05/2020 - Present) - Remote</h6>
+                    <ul class="card-text">
+                        <li>Provided quiz questions for Short Courses, Building Systems with the ChatGPT API and LangChain for LLM Application Development (Python, ChatGPT, LangChain)</li>
+                        <li>Checked content and code for 9 assignments of 3 courses of Practical Data Science Specialization by DeepLearning.AI and AWS on Coursera (technologies: Python with NumPy, Pandas, Pytorch library, AWS S3, Athena, Sagemaker)</li>
+                        <li>Advised on content and code of Generative Adversarial Networks Specialization by DeepLearning.AI on Coursera with 12 reviews completed (technologies: Python with NumPy, Pandas, Scikit-Learn, Pytorch, TensorFlow 2 and Keras libraries among others)</li>
+                        <li>Assessed content and code for 16 assignments of 4 courses of TensorFlow Advanced Techniques Specialization by DeepLearning.AI on Coursera, received certificate as Top Contributor (technologies: Python with NumPy, Pandas, TensorFlow 2.)</li>
+                        <li>Reviewed the content and code for 12 assignments of 3 of 4 courses of the Machine Learning Engineering for Production Specialization (technologies: Python with NumPy, Pandas, Docker, Kubernetes, TensorFlow 2, TFDS, TFX and GCPS)</li>
+                        <li>Reviewed content and code for 16 assignments of 4 courses of the Natural Language Processing Specialization by DeepLearning.AI on Coursera, received certificate as Top Contributor (technologies: Python with NumPy, Pandas, TRAX library)</li>
+                        <li>Created 2 Ungraded Labs in Jupyter for the course for the Natural Language Processing with Attention Models course (technologies: Python with NumPy, Pandas, TRAX library)</li>
+                        <li>Mentored students in the specialization by answering questions, writing useful information threads, receiving feedback from students for continuous improvement for the Natural Language Specialization, Deep Learning Specializations 12 questions answered (technologies: Python with the TRAX and TensorFlow 2 libraries)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Odysseus Data Services -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-bar-chart-line experience-icon"></i> Odysseus Data Services</h5>
+                    <h6 class="card-subtitle mb-2">Data Scientist (10/2021 - 06/2024) - Remote</h6>
+                    <ul class="card-text">
+                        <li>Provide data engineering support for Amgen to make the DARWIN – EU packages compatible with Databricks. (technologies: R, Databricks, Spark)</li>
+                        <li>Produce an R-Shiny Application to render Johnson & Johnson’s Phenotype Library. (technologies: R, Shiny library, Domino Lab, Redshift)</li>
+                        <li>Develop an R-Shiny Application to render the results of cohort characterizations for Amgen. (technologies: R and the Shiny library)</li>
+                        <li>Contributed with three R packages to develop Merkc’s Data Quality Analysis (DQA) (technologies: R and SQL)</li>
+                        <li>Crafted and implemented SQL data analysis and engeneering solutions for the transformation of diverse Electronic Health Record systems into the standardized OMOP-CDM framework for 2 projects: Stanford PHederation and Dana Farber Cancer Institute projects. (technologies: SQL in BigQuery and Snowflake)</li>
+                        <li>Implemented an R-Shiny Application to present the results of the data quality checks as a Pivot Table to facilitate interpretation. (technologies: R and the Shiny library)</li>
+                        <li>Provide research assistance for Odysseus on the Algorithmic and Machine Learning phenotyping litterature</li>
+                        <li>Ran SQL queries for the ODHSI Data Quality Dashboard, had to setup a client in R for SQL (technologies: R and PostgreSQL)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNIDES -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-globe experience-icon"></i> FUNIDES</h5>
+                    <h6 class="card-subtitle mb-2">Chief Economist (03/2007 - 02/2019) - Nicaragua</h6>
+                    <ul class="card-text">
+                        <li>Addressed and responded to inquiries from FUNIDES directors regarding the think tank's economic research agenda. FUNIDES is a leading Nicaraguan think tank and ranks among the top in Latin America.</li>
+                        <li>Applied macro and micro econometric models for analysis and prediction (technologies: Python, NumPy, Scikit-Learn, Pandas, R, Stata, Matlab)</li>
+                        <li>Directed a quarterly review of the Nicaraguan economy, analysis of 5 macroeconomic sectors (Monetary, Fiscal, Financial, External and Real) (technologies: R with GGPLOT2 library, Word, Excel, PowerPoint)</li>
+                        <li>Authored 3 Working Papers: An Analysis of Health Indicators, Social Impact of Public Interventions, Determinants of the Duration in Employment and Unemployment of University Graduates) (technologies: R and Stata)</li>
+                        <li>Designed the content, methodology, and analysis of 2 of FUNIDES’ surveys (consumer and investor confidence surveys)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-info-circle biography-icon"></i> About This Website</h2>
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .biography-icon {
+            font-size: 1.6rem;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #007bff;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            text-align: left; /* Aligns text to the left */
+            margin: 10px 0;
+            text-align: left; /* Aligns text to the left */
+        }
+
+        /* Centered Content for Large Screens */
+        .col-md-12 {
+            max-width: 800px;
+            margin: auto;
+        }
+    </style>
+
+    <div class="row justify-content-center">
+        <!-- Welcome Section -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-house-door biography-icon"></i> Welcome</h5>
+                    <p class="card-text">Welcome to <strong>Luis' Web Site!</strong> This web application is built using Django.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purpose of Website -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-list-task biography-icon"></i> What is this website?</h5>
+                    <p class="card-text">
+                        This website provides an academic course curriculum table, a rewards table, and an API to access records on both tables.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Usage -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-cloud biography-icon"></i> How to use the API?</h5>
+                    <p class="card-text">
+                        To use the API, you need an authentication token.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Steps to Get API Key -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-key biography-icon"></i> Steps to Get Your API Key:</h5>
+                    <ul class="card-text">
+                        <li>Register for an account.</li>
+                        <li>Login to your account.</li>
+                        <li>Navigate to the <strong>API Key</strong> page.</li>
+                        <li>Copy your personal API token.</li>
+                        <li>Use it in your API requests.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- API Request Example -->
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-terminal biography-icon"></i> Example API Request Using curl Command in Terminal:</h5>
+                    <div class="code-block">
+                        <pre>curl -H "Authorization: Token YOUR_API_KEY" https://laacdm.pythonanywhere.com/api/records/</pre>
+                    </div>
+                    <p class="card-text mt-2">Only authenticated users can access the API.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

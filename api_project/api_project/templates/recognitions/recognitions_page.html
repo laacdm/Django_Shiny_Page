@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Recognitions - Luis' Web Site{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4"><i class="bi bi-award recognitions-icon"></i>Recognitions</h2>
+
+<style>
+    /* Column width customization */
+    .table th:nth-child(1), .table td:nth-child(1) { width: 23%; }  /* Name */
+    .table th:nth-child(2), .table td:nth-child(2) { width: 23%; }  /* Type */
+    .table th:nth-child(3), .table td:nth-child(3) { width: 23%; }  /* Institution */
+    .table th:nth-child(4), .table td:nth-child(4) { width: 23%; }  /* Date */
+    .table th:nth-child(5), .table td:nth-child(5) { min-width: 100px; } /* Image */
+
+    /* Font size adjustments */
+    .table th, .table td { font-size: 14px; }
+    .table td:nth-child(8) {
+        white-space: normal; /* Allows text to wrap */
+        word-wrap: break-word; /* Ensures long words wrap */
+        max-width: 300px; /* Optional: Prevents the column from becoming too wide */
+        text-align: center;
+    }
+    .table thead th {
+    text-align: center; /* Centers text in the header cells */
+    vertical-align: middle; /* Ensures alignment looks balanced */
+    }
+    .table td {
+    text-align: center;
+    }
+    .recognitions-icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+        color: #007bff;
+    }
+</style>
+
+<!-- ✅ Responsive Table Wrapper -->
+<div class="table-responsive">
+    <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Institution</th>
+                <th>Date</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recognition in page_obj %}
+            <tr>
+                <td>{{ recognition.name }}</td>
+                <td>{{ recognition.type_of_recognition }}</td>
+                <td>{{ recognition.institution }}</td>
+                <td>{{ recognition.date }}</td>
+                <td class="thumbnail">
+                    {% if recognition.thumbnail %}
+                        <a href="/media/{{ recognition.image_id }}" target="_blank" data-bs-toggle="tooltip" title="Click to view full size">
+                            <img src="/media/{{ recognition.thumbnail }}" class="rounded img-fluid" style="max-width: 80px;">
+                        </a>
+                    {% else %}
+                        <a href="/media/{{ recognition.image_id }}">View PDF</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- ✅ Pagination (Mobile-Friendly) -->
+<nav>
+    <ul class="pagination pagination-sm justify-content-center">
+        {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        <li class="page-item disabled"><a class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+        {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+<!-- ✅ Bootstrap Tooltip Activation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+            new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4"><i class="bi bi-person-plus biography-icon"></i> Register</h2>
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .biography-icon {
+            font-size: 1.6rem;
+            margin-right: 10px;
+            color: #007bff;
+        }
+
+        .form-control {
+            padding-left: 10px;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            width: 100%;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card p-3">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-person-add biography-icon"></i> Create an Account</h5>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            {{ form.as_p }}
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-person-check"></i> Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
