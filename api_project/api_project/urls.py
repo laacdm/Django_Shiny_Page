@@ -18,7 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from records.views import RecordViewSet, home, about, experience, records, register, user_login, user_logout, get_api_key
+from records.views import RecordViewSet, home, about, experience, records, register, user_login, user_logout, get_api_key, web_apps
 from recognitions.views import RecognitionViewSet
 
 router = DefaultRouter()
@@ -33,6 +33,7 @@ urlpatterns = [
     path('about/', about, name='about'),  # ✅ Add About page URL
     path('experience/', experience, name='experience'),  # ✅ Add Experience page URL
     path('records/', records, name='records'),  # ✅ Add Records page URL
+    path('web-apps/', web_apps, name='web_apps'),
     path('register/', register, name='register'),
     path('login/', user_login, name='login'), # ✅ Add login page
     path('logout/', user_logout, name='logout'),

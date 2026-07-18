@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Web Apps{% endblock %}
+
+{% block content %}
+<style>
+    .accordion-button {
+        background-color: #343a40;
+        color: #ffffff;
+        font-weight: 600;
+        font-family: Arial, sans-serif;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: #343a40;
+        color: #ffffff;
+        box-shadow: none;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    .accordion-button::after {
+        filter: brightness(0) invert(1);
+    }
+</style>
+
+<div class="container py-4">
+    <h2 class="mb-4">Web Apps</h2>
+    
+    <div class="accordion" id="webAppsAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSolow">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolow" aria-expanded="true" aria-controls="collapseSolow">
+                    Solow
+                </button>
+            </h2>
+            <div id="collapseSolow" class="accordion-collapse collapse show" aria-labelledby="headingSolow" data-bs-parent="#webAppsAccordion">
+                <div class="accordion-body p-0">
+                    <iframe src="https://laac.shinyapps.io/Solow/" title="Solow app" class="w-100 border-0" style="height: 700px;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingIncidenceRate">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIncidenceRate" aria-expanded="false" aria-controls="collapseIncidenceRate">
+                    Incidence Rate
+                </button>
+            </h2>
+            <div id="collapseIncidenceRate" class="accordion-collapse collapse" aria-labelledby="headingIncidenceRate" data-bs-parent="#webAppsAccordion">
+                <div class="accordion-body p-0">
+                    <iframe src="https://laac.shinyapps.io/IncidenceRate/" title="Incidence Rate app" class="w-100 border-0" style="height: 700px;"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCohortCounts">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCohortCounts" aria-expanded="false" aria-controls="collapseCohortCounts">
+                    Cohort Counts
+                </button>
+            </h2>
+            <div id="collapseCohortCounts" class="accordion-collapse collapse" aria-labelledby="headingCohortCounts" data-bs-parent="#webAppsAccordion">
+                <div class="accordion-body p-0">
+                    <iframe src="https://laac.shinyapps.io/cohortCounts/" title="Cohort Counts app" class="w-100 border-0" style="height: 700px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

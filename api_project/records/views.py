@@ -11,6 +11,10 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from rest_framework.authtoken.models import Token
 
+
+def web_apps(request):
+    return render(request, 'records/web_apps.html')
+
 # ✅ Home View with Pagination and Sorting
 def records(request):
     # Define a custom sorting order for the 'type_of_document' field
