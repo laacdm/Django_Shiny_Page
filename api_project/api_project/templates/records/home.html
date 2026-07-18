@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Luis' Web Site{% endblock %}
 
 {% block content %}
 <div class="container">
     <h2 class="text-center mb-4 about-me-header">
-    <img src="/media/thumbnails/LAAC-photo1.jpg" alt="Luis Alberto Alaniz Castillo" class="about-me-photo">
+    <img src="{% static 'images/LAAC-photo1.jpg' %}" alt="Luis Alberto Alaniz Castillo" class="about-me-photo"> /* Corrected the image path to use Django's static template tag by Copilot*/
     <span>About Me</span>
     </h2>
 
